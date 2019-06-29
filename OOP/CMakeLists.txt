@@ -3,4 +3,4 @@ project(OOP)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(OOP main.cpp exam.cpp exam.h)
+add_executable(OOP main.cpp)

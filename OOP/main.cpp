@@ -7,12 +7,13 @@ using namespace std;
 #define GOOD_NUM_BIL 3
 #define GOOD_FOR_STUDENT 4
 
+enum SubjectProfessor {Math, Geom, Program};
 
 class Human{
 private:
     string name;
 public:
-    string GetName(){
+    string GetName() {
         return this->name;
     }
     void SetName(string name){
@@ -21,9 +22,18 @@ public:
 };
 
 class Professor: public Human{
+    SubjectProfessor Subject;
     bool MoodProf;
     int num;
 public:
+    Professor(string name,SubjectProfessor Subject){
+        SetName(name);
+        this-> Subject = Subject;
+    }
+
+    SubjectProfessor GetSubject(){
+        return this->Subject;
+    }
     void SetMood(bool mood){
         this-> MoodProf = mood;
     }
@@ -93,16 +103,17 @@ private:
 
 class Print{
 public:
-    void printStudent(Student &s){
+    void printStudent(Student &s,Professor &p ){
         cout << s.GetName() << " is ";
         if (s.GetMoodGrade() >= 4){
             cout << "pleased ";
         }
-        else cout << " not pleased ";
-        cout << "his grade";
+        else cout << "not pleased ";
+
+        cout << p.GetName() << "'s grade";
     }
     void printProfessor(Professor &p){
-        cout << p.GetName() << " today in a ";
+        cout << p.GetName() << " teacher today in a ";
         if (p.GetMood() == true){
             cout << "good mood" << endl;
         }
@@ -110,12 +121,25 @@ public:
     }
 };
 
+void ListOfCommand() {
+    cout << "Enter name professor and subject and name student" << endl;
+    cout << "Press '1' if the subject is mathematics" << endl;
+    cout << "Press '2' if the subject is geometry" << endl;
+    cout << "Press '3' if the subject is programming" << endl;
+}
+
 int main() {
-    Professor prof;
+    ListOfCommand();
+    string NameProf;
+    string NameStud;
+    int subj;
+    cin >> subj;
+    cin >> NameProf;
+    cin >> NameStud;
+    Professor prof(NameProf,SubjectProfessor(subj));
     prof.SetMood(true);
-    prof.SetName("Ivan Ivanovich");
     Student st;
-    st.SetName("Ilya");
+    st.SetName(NameStud);
     st.SetCheat(2);
     if (prof.GetMood() == true){
         prof.NumofQuest(GOOD_NUM_BIL);
@@ -130,6 +154,6 @@ int main() {
     else st.MoodGrade(st.SetBadGrade());
     Print p;
     p.printProfessor(prof);
-    p.printStudent(st);
+    p.printStudent(st, prof);
     return 0;
 }
