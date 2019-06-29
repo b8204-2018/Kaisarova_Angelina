@@ -28,18 +28,26 @@ class Professor: public Human{
 public:
     Professor(string name,SubjectProfessor Subject){
         SetName(name);
-        this-> Subject = Subject;
+        this->Subject = Subject;
     }
 
     SubjectProfessor GetSubject(){
         return this->Subject;
     }
-    void SetMood(bool mood){
-        this-> MoodProf = mood;
-    }
 
     bool GetMood(){
+        this->Subject = Subject;
+        if (Subject == 1 || Subject == 2){
+            MoodProf = true;
+        }
+        else{
+        MoodProf = false;
+        }
         return MoodProf;
+    }
+
+    void SetMood(bool mood){
+        this-> MoodProf = mood;
     }
 
     void NumofQuest(int num) {
@@ -137,10 +145,9 @@ int main() {
     cin >> NameProf;
     cin >> NameStud;
     Professor prof(NameProf,SubjectProfessor(subj));
-    prof.SetMood(true);
     Student st;
     st.SetName(NameStud);
-    st.SetCheat(2);
+    st.SetCheat(1);
     if (prof.GetMood() == true){
         prof.NumofQuest(GOOD_NUM_BIL);
     }
