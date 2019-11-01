@@ -1,0 +1,79 @@
+body{
+    background-image: url("image/background.png");
+    }
+body:before{
+    content: "[COLLECTION PHOTO]";
+    font-family: "McLaren", cursive;
+    font-size: 60px;
+    font-weight: 700;
+}
+header{
+    font-family: "McLaren", cursive;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.menu  ul{
+    list-style: none;
+}
+ul:nth-child(1){
+    margin-top: 40px;
+}
+div.black_key + div.white_key{
+    margin: -30px 0px 0px 0px;
+}
+.white_key, .black_key,.menu > ul li a{
+    position: relative;
+}
+.white_key{
+    display: block; width: 450px; height: 70px;
+    background: white;
+    border-radius: 10px ;
+    border: solid black 2px;
+    z-index: 1;
+}
+li + div{
+    margin-top: -30px;
+}
+.black_key{
+    margin: -20px 0px 0px 204px;
+    display: block; width: 250px; height: 50px;
+    background: black;
+    border-radius: 10px;
+    z-index: 2;
+}
+.menu > ul a{
+    margin: -20px 0px 0px 204px;
+    display: block; width: 250px; height: 50px;
+    background: black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    color: burlywood;
+    text-decoration: none;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.menu li a:hover{
+    background: dimgrey;
+    transition: all 0.3s ease;
+}
+
+.menu li ul{
+    position: absolute;
+    left: 260px;
+    display: none;
+    transition-delay: 0.15s;
+    margin-top: -100px;
+}
+.menu li > ul li a{
+    background: white;
+    margin-top: 1px;
+}
+.menu li > ul li ul{
+    position: absolute;
+    left: 250px;
+}
+.menu li:hover > ul{
+    display: block;
+}

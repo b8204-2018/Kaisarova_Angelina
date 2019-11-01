@@ -1,0 +1,15 @@
+body header{
+    font-family: "Liu Jian Mao Cao", cursive;
+    font-size: 25px;
+    margin-top: 10px;
+    color: #4b3b2e;
+    margin-left: 10px;
+}
+p{
+    font-family: "Robot Mono";
+    font-size: 50px;
+    color: #272e50;
+}
+header > img{
+    margin-left: 200px;
+}
