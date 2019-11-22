@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhackAMole</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Score <span class = "score">0</span></h1>
+    <div class = "game">
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+    </div>
+    <button onclick="Game()">Start</button>
+
+<script>
+    let cells = document.querySelectorAll('.index');
+    let txtScore = document.querySelector('.score');
+    let maxScore = 20;
+    let score = 0;
+
+    function randomTime(min,max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function randomCell(cells) {
+        let i =  Math.floor(Math.random() * cells.length);
+        return cells[i];
+    }
+
+    function Game() {
+        let time = randomTime(100, 2000);
+        let cell = randomCell(cells);
+        txtScore.textContent = score;
+        cell.onclick = function () {
+            if (cell.classList.contains('black')) {
+                cell.classList.remove('black');
+                score++;
+            } else console.log(time);
+        };
+        cell.classList.add('black');
+        setTimeout(() => {
+            cell.classList.remove('black');
+            if (score !== maxScore)
+                Game();
+        }, time);
+    }
+
+</script>
+</body>
+</html>
