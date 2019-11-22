@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ElephatntTheft</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav== class = "table">
+        <div class = "row1">
+            <div class = "column"></div>
+            <div class = "column"></div>
+            <div class = "column"></div>
+        </div>
+        <div class = "row2">
+            <div class = "column"></div>
+            <div class = "column"></div>
+            <div class = "column"></div>
+        </div>
+        <div class = "row3">
+            <div class = "column"></div>
+            <div class = "column"></div>
+            <div class = "column"></div>
+        </div>
+        <div class = "row4">
+            <div class = "column"></div>
+            <div class = "column"></div>
+            <div class = "column"></div>
+        </div>
+</nav>
+    <script>
+        let row = document.querySelectorAll("div.row1, .row1 > div");
+        let column = document.querySelectorAll("div.row1, div.row2, div.row3, div.row4");
+        for (let i = 0; i <= row.length; i++) {
+            row[i].classList.add('blue')
+        }
+        for (let j = 0; j <= column.length; j++) {
+            column[j].classList.add('red')
+        }
+    </script>
+</body>
+</html>
