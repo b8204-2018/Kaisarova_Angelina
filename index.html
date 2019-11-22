@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ElephantTheft</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class = "table">
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+        <div class = "index"></div>
+    </div>
+
+    <script>
+        let row = document.querySelectorAll(".index");
+        for (let i = 0; i < row.length; i++) {
+            row[i].onclick = function () {
+                for (let j = i % 4; j < row.length; j += 4) {
+                    if (row[j].classList.contains('black')) {
+                        row[j].classList.remove('black');
+                    } else
+                        row[j].classList.add('black');
+                }
+                for (let j = (i - (i % 4)); j <= i - (i % 4) + 3; j++) {
+                    if (j !== i){
+                        if (row[j].classList.contains('black')) {
+                            row[j].classList.remove('black');
+                        } else
+                            row[j].classList.add('black');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
