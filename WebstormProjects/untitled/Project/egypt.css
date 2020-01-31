@@ -1,0 +1,53 @@
+body {
+    background: #202024;
+}
+
+.game{
+    width: 350px;
+    height:350px;
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 auto;
+}
+
+.index {
+    display: inline-block;
+    width: 70px; height: 70px;
+    border: 3px solid #272e50;
+    border-radius: 50px;
+    margin:5px;
+    background: white;
+    outline: none;
+}
+
+.index.black{
+    background: url("/sources/icon.png");
+}
+
+h1 {
+    text-align: center;
+    font-size: 70px;
+    line-height: 1;
+    margin-bottom: 0;
+}
+video{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+button{
+    padding: 16px 60px;
+    margin-left: 650px;
+    background-color: #272e50;
+    font-size: 50px;
+}
+
+button:first-child{
+    padding: 16px 60px;
+    margin-left: 620px;
+    background-color: #d9eaf2;
+    font-size: 20px
+}
+input{
+    margin-left: 680px;
+}

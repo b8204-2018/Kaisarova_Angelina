@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Egyptian Mau Cat</title>
+    <link rel="stylesheet" href="/egypt.css">
+</head>
+<body>
+<h1>Score <span class = "score">0</span></h1>
+<div class = "game">
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+    <div class = "index"></div>
+</div>
+<button onclick="Game()">Start</button>
+
+
+<div id="response"></div>
+<form action="" name="MyForm">
+    <p>
+        <input type="text" required name="MyForm_inp">
+    </p>
+    <p>
+        <button type="submit" name="MyForm_btn">Добавить свое имя</button>
+    </p>
+</form>
+
+<script src="/egypt.js"> </script>
+
+
+<video src="/sources/Cats.mp4" controls ></video>
+
+
+
+<script>
+    let cells = document.querySelectorAll('.index');
+    let txtScore = document.querySelector('.score');
+    let maxScore = 20;
+    score = 0;
+
+    function randomTime(min,max) {
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function randomCell(cells) {
+        let i =  Math.floor(Math.random() * cells.length);
+        return cells[i];
+    }
+
+    function Game() {
+        let time = randomTime(100, 2000);
+        let cell = randomCell(cells);
+        txtScore.textContent = score;
+        cell.onclick = function () {
+            if (cell.classList.contains('black')) {
+                cell.classList.remove('black');
+                score++;
+            } else console.log(time);
+        };
+        cell.classList.add('black');
+        setTimeout(() => {
+            cell.classList.remove('black');
+            if (score !== maxScore)
+                Game();
+        }, time);
+    }
+
+</script>
+</body>
+</html>
